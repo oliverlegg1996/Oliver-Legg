@@ -1,0 +1,9 @@
+cp /etc/passwd /root/Desktop/JOHN/passwd_copy
+cp /etc/shadow /root/Desktop/JOHN/shadow_copy
+chmod 755 passwd_copy && chmod 755 passwd_copy shadow_copy
+unshadow passwd_copy shadow_copy > crackme
+john --format=sha512crypt crackme
+
+
+
+
